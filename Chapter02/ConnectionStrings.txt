@@ -1,0 +1,12 @@
+Azure SQL Database:
+-------------------
+Server=tcp:apps-services-book-mm.database.windows.net,1433;
+Initial Catalog=Northwind;
+Persist Security Info=False;
+User ID=mmelekus;
+Password={your_password};
+MultipleActiveResultSets=False;
+Encrypt=True;
+TrustServerCertificate=False;
+Connection Timeout=30;
+===================
