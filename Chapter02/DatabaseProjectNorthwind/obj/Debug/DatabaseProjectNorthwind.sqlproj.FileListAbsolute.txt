@@ -1,0 +1,10 @@
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\bin\Debug\DatabaseProjectNorthwind.dacpac
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\bin\Debug\DatabaseProjectNorthwind.dll
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\bin\Debug\DatabaseProjectNorthwind.pdb
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\DatabaseProjectNorthwind.sqlproj.AssemblyReference.cache
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\Model.xml
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\refactor.xml
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\postdeploy.sql
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\predeploy.sql
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\DatabaseProjectNorthwind.dll
+d:\apps-services-net8\Chapter02\DatabaseProjectNorthwind\obj\Debug\DatabaseProjectNorthwind.pdb
