@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Northwind.Console.SqlClient\\Program.cs",
               "ToolTip": "D:\\apps-services-net8\\Chapter02\\Northwind.Console.SqlClient\\Program.cs",
               "RelativeToolTip": "Northwind.Console.SqlClient\\Program.cs",
-              "ViewState": "AQIAAFIAAAAAMjMzMzMrwFkAAAAoAAAA",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAAAHgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-02T02:19:34.957Z",
               "EditorCaption": ""
@@ -47,7 +47,8 @@
               "RelativeToolTip": "Northwind.Console.SqlClient\\Program.EventHandlers.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAACbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T02:14:49.717Z"
+              "WhenOpened": "2024-05-02T02:14:49.717Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

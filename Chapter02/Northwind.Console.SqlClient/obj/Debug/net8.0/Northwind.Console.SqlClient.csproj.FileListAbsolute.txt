@@ -53,3 +53,4 @@ D:\apps-services-net8\Chapter02\Northwind.Console.SqlClient\obj\Debug\net8.0\ref
 D:\apps-services-net8\Chapter02\Northwind.Console.SqlClient\obj\Debug\net8.0\Northwind.Console.SqlClient.pdb
 D:\apps-services-net8\Chapter02\Northwind.Console.SqlClient\obj\Debug\net8.0\Northwind.Console.SqlClient.genruntimeconfig.cache
 D:\apps-services-net8\Chapter02\Northwind.Console.SqlClient\obj\Debug\net8.0\ref\Northwind.Console.SqlClient.dll
+D:\apps-services-net8\Chapter02\Northwind.Console.SqlClient\bin\Debug\net8.0\Dapper.dll
