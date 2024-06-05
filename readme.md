@@ -13,7 +13,13 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 - Data:
   - SQL Server (local)
   - Azure SQL Server in Azure
+    - Connection String: `"Server=tcp:apps-services-book-mm.database.windows.net,1433;Initial Catalog=Northwind;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication="Active Directory Default";`
+    - User ID: *Private*
+    - Password: *Private*
   - Azure SQL Edge in Docker
+    - Connection String: `"Data Source=tcp:127.0.0.1,1433;Initial Catalog=Northwind;User ID=SA;Password=s3cret-Ninja;Multiple Active Result Sets=True;Connect Timeout=3;Trust Server Certificate=True"`
+    - User ID: SA
+    - Password: s3cret-Ninja
 - IDE's:
   - Visual Studio 2022
   - Visual Studio Code 1.88
