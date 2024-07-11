@@ -18,8 +18,14 @@ Repository to store exercie files and labs for the book [Apps and Services with 
     - Password: *Private*
   - Azure SQL Edge in Docker
     - Connection String: `"Data Source=tcp:127.0.0.1,1433;Initial Catalog=Northwind;User ID=SA;Password=s3cret-Ninja;Multiple Active Result Sets=True;Connect Timeout=3;Trust Server Certificate=True"`
-    - User ID: SA
-    - Password: s3cret-Ninja
+    - User ID: SA (MY_SQL_USR)
+    - Password: s3cret-Ninja (MY_SQL_PWD)
+  - Azure Cosmos DB Emulator in Docker
+    - Endpoint: https://localhost:8081/
+    - Primary Key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+    - Database: Northwind
+    - Container: Products
+    - Partition Key: /productId
 - IDE's:
   - Visual Studio 2022
   - Visual Studio Code 1.88

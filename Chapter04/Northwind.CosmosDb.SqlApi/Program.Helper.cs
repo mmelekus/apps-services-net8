@@ -1,4 +1,6 @@
-﻿partial class Program
+﻿using Microsoft.Extensions.Configuration;
+
+partial class Program
 {
     static void SectionTitle(string title)
     {
@@ -8,5 +10,14 @@
         WriteLine($"* {title}");
         WriteLine("*");
         ForegroundColor = previousColor;
+    }
+
+    static IConfiguration Configure()
+    {
+        var configuration = new ConfigurationBuilder()
+            .AddEnvironmentVariables()
+            .Build();
+
+        return configuration;
     }
 }
