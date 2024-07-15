@@ -41,3 +41,49 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 > ### Windows App SDK
 > - For creating Windows 10 and 11 applications using a unified API and toolset.
 > - [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/)
+
+> ### Configuration with Environment Variables
+> Setting up configuration with environment variables using a launchSettings.json file.
+> *launchSettings.json file format*
+> ```
+> {
+>   "profiles": {
+>     "<Assembly Name>" : {
+>       "commandName": "Project",
+>       "environmentVariables": {
+>         "<EnvVar1>": "<Value1>"
+>          "<EnvVar2>": "<Value2>"
+>        }
+>      }
+>    }  
+>  }
+> ```
+>
+> *e.g.:*
+> ```
+> {
+>   "profiles": {
+>     "Northwind.CosmosDb.SqlApi" : {
+>       "commandName": "Project",
+>       "environmentVariables": {
+>         "MY_SQL_USR": "<Value1>"
+>          "MY_SQL_PWD": "<Value2>"
+>        }
+>      }
+>    }  
+>  }
+> ```
+> *Reference the following NuGet packages in the project:*
+> - Microsoft.Extensions.Configuration
+> - Microsoft.Extensions.Configuration.EnvironmentVariables
+> *Use the following code to reference the environment variables:*
+> ```
+>   var config = new ConfigurationBuilder()
+>     .AddEnvironmentVarialbes()
+>     .Build();
+> ```
+> *Retrieve the environment variables:*
+> ```
+> var userID = Environment.GetEnvironmentVariable("MY_SQL_USR");
+> var password = Environment.GetEnvironmentVariable("MY_SQL_PWD");
+> ```

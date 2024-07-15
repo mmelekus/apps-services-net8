@@ -10,4 +10,6 @@ IConfiguration config = Configure();
 OutputEncoding = Encoding.UTF8; // To enable Euro symbol output.
 // Simulate French culture to test Euro currency symbol output.
 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR");
-await ListProductItems();
+// await ListProductItems();
+
+await DeleteProductItems();
