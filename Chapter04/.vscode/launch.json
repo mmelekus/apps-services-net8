@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "C#: Northwind.CosmosDb.SqlApi",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.CosmosDb.SqlApi\\Northwind.CosmosDb.SqlApi.csproj",
+            "launchConfigurationId": "TargetFramework=;Northwind.CosmosDb.SqlApi"
+        }
+    ]
+}

@@ -18,8 +18,14 @@ Repository to store exercie files and labs for the book [Apps and Services with 
     - Password: *Private*
   - Azure SQL Edge in Docker
     - Connection String: `"Data Source=tcp:127.0.0.1,1433;Initial Catalog=Northwind;User ID=SA;Password=s3cret-Ninja;Multiple Active Result Sets=True;Connect Timeout=3;Trust Server Certificate=True"`
-    - User ID: SA
-    - Password: s3cret-Ninja
+    - User ID: SA (MY_SQL_USR)
+    - Password: s3cret-Ninja (MY_SQL_PWD)
+  - Azure Cosmos DB Emulator in Docker
+    - Endpoint: https://localhost:8081/
+    - Primary Key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+    - Database: Northwind
+    - Container: Products
+    - Partition Key: /productId
 - IDE's:
   - Visual Studio 2022
   - Visual Studio Code 1.88
@@ -35,3 +41,49 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 > ### Windows App SDK
 > - For creating Windows 10 and 11 applications using a unified API and toolset.
 > - [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/)
+
+> ### Configuration with Environment Variables
+> Setting up configuration with environment variables using a launchSettings.json file.
+> *launchSettings.json file format*
+> ```
+> {
+>   "profiles": {
+>     "<Assembly Name>" : {
+>       "commandName": "Project",
+>       "environmentVariables": {
+>         "<EnvVar1>": "<Value1>"
+>          "<EnvVar2>": "<Value2>"
+>        }
+>      }
+>    }  
+>  }
+> ```
+>
+> *e.g.:*
+> ```
+> {
+>   "profiles": {
+>     "Northwind.CosmosDb.SqlApi" : {
+>       "commandName": "Project",
+>       "environmentVariables": {
+>         "MY_SQL_USR": "<Value1>"
+>          "MY_SQL_PWD": "<Value2>"
+>        }
+>      }
+>    }  
+>  }
+> ```
+> *Reference the following NuGet packages in the project:*
+> - Microsoft.Extensions.Configuration
+> - Microsoft.Extensions.Configuration.EnvironmentVariables
+> *Use the following code to reference the environment variables:*
+> ```
+>   var config = new ConfigurationBuilder()
+>     .AddEnvironmentVarialbes()
+>     .Build();
+> ```
+> *Retrieve the environment variables:*
+> ```
+> var userID = Environment.GetEnvironmentVariable("MY_SQL_USR");
+> var password = Environment.GetEnvironmentVariable("MY_SQL_PWD");
+> ```
