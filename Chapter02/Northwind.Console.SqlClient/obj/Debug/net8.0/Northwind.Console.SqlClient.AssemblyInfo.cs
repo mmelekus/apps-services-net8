@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Northwind.Console.SqlClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f71f10204929a0c0ca00bbd82c3d22b4116a9f2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5efde44059b672511cd88f1529727989fb4b27c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Northwind.Console.SqlClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Northwind.Console.SqlClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
