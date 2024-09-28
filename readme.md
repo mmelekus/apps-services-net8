@@ -6,6 +6,8 @@ Repository to store exercie files and labs for the book [Apps and Services with 
   - [Book Code Samples (GitHub)](https://github.com/markjprice/apps-services-net8)
   - [Color images of the screenshots and diagrams used in the book](https://packt.link/gbp/9781837637133)
 - [Exercise Files and Projects (GitHub)](https://github.com/mmelekus/apps-services-net8)
+- [Azure Cosmos DB for NoSQL Documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/)
+  - [Develop locaccy using the Azure Cosmos DB emulator](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=docker-linux%2Ccsharp&pivots=api-nosql)
 
 ## Technologies
 - Framework: .NET 8
@@ -51,8 +53,8 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 >     "<Assembly Name>" : {
 >       "commandName": "Project",
 >       "environmentVariables": {
->         "<EnvVar1>": "<Value1>"
->          "<EnvVar2>": "<Value2>"
+>         "<EnvVar1>": "<Value1>",
+>         "<EnvVar2>": "<Value2>"
 >        }
 >      }
 >    }  
@@ -66,8 +68,8 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 >     "Northwind.CosmosDb.SqlApi" : {
 >       "commandName": "Project",
 >       "environmentVariables": {
->         "MY_SQL_USR": "<Value1>"
->          "MY_SQL_PWD": "<Value2>"
+>         "MY_SQL_USR": "<Value1>",
+>         "MY_SQL_PWD": "<Value2>"
 >        }
 >      }
 >    }  
@@ -76,6 +78,7 @@ Repository to store exercie files and labs for the book [Apps and Services with 
 > *Reference the following NuGet packages in the project:*
 > - Microsoft.Extensions.Configuration
 > - Microsoft.Extensions.Configuration.EnvironmentVariables
+>
 > *Use the following code to reference the environment variables:*
 > ```
 >   var config = new ConfigurationBuilder()
