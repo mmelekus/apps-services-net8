@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: AsyncEnumerable",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\AsyncEnumerable\\AsyncEnumerable.csproj",
+            "launchConfigurationId": "TargetFramework=;AsyncEnumerable"
+        },
+        {
+            "name": "C#: AsyncConsole",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\AsyncConsole\\AsyncConsole.csproj",
+            "launchConfigurationId": "TargetFramework=;AsyncConsole"
+        },
+        {
+            "name": "C#: SynchronizingResourceAccess",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\SynchronizingResourceAccess\\SynchronizingResourceAccess.csproj",
+            "launchConfigurationId": "TargetFramework=;SynchronizingResourceAccess"
+        },
+        {
+            "name": "C#: WorkingWithTasks",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\WorkingWithTasks\\WorkingWithTasks.csproj",
+            "launchConfigurationId": "TargetFramework=;WorkingWithTasks"
+        }
+    ]
+}

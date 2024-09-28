@@ -1,0 +1,11 @@
+{
+    "profiles": {
+        "WpfResponsive": {
+            "commandName": "Project",
+            "environmentVariables": {
+                "MY_SQL_USR": "SA",
+                "MY_SQL_PWD": "s3cret-Ninja"
+            }
+        }
+    }
+}
