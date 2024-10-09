@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "C#: WorkingWithImages",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\WorkingWithImages\\WorkingWithImages.csproj",
+            "launchConfigurationId": "TargetFramework=;WorkingWithImages"
+        }
+    ]
+}
