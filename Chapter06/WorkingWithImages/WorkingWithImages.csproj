@@ -16,28 +16,28 @@
     <None Update="images\categories.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories1.jpeg">
+    <None Update="images\category1.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories2.jpeg">
+    <None Update="images\category2.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories3.jpeg">
+    <None Update="images\category3.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories4.jpeg">
+    <None Update="images\category4.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories5.jpeg">
+    <None Update="images\category5.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories6.jpeg">
+    <None Update="images\category6.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories7.jpeg">
+    <None Update="images\category7.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="images\categories8.jpeg">
+    <None Update="images\category8.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
