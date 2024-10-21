@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "name": "C#: HumanizingData",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\HumanizingData\\HumanizingData.csproj",
+            "launchConfigurationId": "TargetFramework=;HumanizingData"
+        },
+        {
             "name": "C#: WorkingWithImages",
             "type": "dotnet",
             "request": "launch",
