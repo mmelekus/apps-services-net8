@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "name": "C#: Serilogging",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Serilogging/Serilogging.csproj",
+            "launchConfigurationId": "TargetFramework=;Serilogging"
+        },
+        {
             "name": "C#: HumanizingData",
             "type": "dotnet",
             "request": "launch",
