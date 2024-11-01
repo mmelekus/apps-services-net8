@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingObjects.Console", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentTests", "FluentTests\FluentTests.csproj", "{695BD039-2B61-4405-940C-DEA734FB2E93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Models", "FluentValidation.Models\FluentValidation.Models.csproj", "{BD9474EF-8BDF-4571-BE57-813BE32137AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Validators", "FluentValidation.Validators\FluentValidation.Validators.csproj", "{59DF6546-4D00-4D3B-94E7-DC073CF738D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation.Console", "FluentValidation.Console\FluentValidation.Console.csproj", "{FC1826FF-2AE4-456C-96F1-645D9E06B244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +66,17 @@ Global
 		{695BD039-2B61-4405-940C-DEA734FB2E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{695BD039-2B61-4405-940C-DEA734FB2E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{695BD039-2B61-4405-940C-DEA734FB2E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9474EF-8BDF-4571-BE57-813BE32137AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9474EF-8BDF-4571-BE57-813BE32137AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9474EF-8BDF-4571-BE57-813BE32137AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9474EF-8BDF-4571-BE57-813BE32137AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DF6546-4D00-4D3B-94E7-DC073CF738D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DF6546-4D00-4D3B-94E7-DC073CF738D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DF6546-4D00-4D3B-94E7-DC073CF738D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DF6546-4D00-4D3B-94E7-DC073CF738D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1826FF-2AE4-456C-96F1-645D9E06B244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1826FF-2AE4-456C-96F1-645D9E06B244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1826FF-2AE4-456C-96F1-645D9E06B244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1826FF-2AE4-456C-96F1-645D9E06B244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

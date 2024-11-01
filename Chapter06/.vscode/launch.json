@@ -1,6 +1,14 @@
 {
     "configurations": [
         {
+            "name": "C#: FluentValidation",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/FluentValidation.Console/FluentValidation.Console.csproj",
+            "launchConfigurationId": "TargetFramework=;FluentValidation.Console"
+        },
+
+        {
             "name": "C#: Serilogging",
             "type": "dotnet",
             "request": "launch",
