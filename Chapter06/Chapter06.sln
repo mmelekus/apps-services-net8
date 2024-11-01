@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingObjects.Tests", "Map
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingObjects.Console", "MappingObjects.Console\MappingObjects.Console.csproj", "{68DD204D-B332-4F87-9A30-C39A9873840D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentTests", "FluentTests\FluentTests.csproj", "{695BD039-2B61-4405-940C-DEA734FB2E93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{68DD204D-B332-4F87-9A30-C39A9873840D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68DD204D-B332-4F87-9A30-C39A9873840D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68DD204D-B332-4F87-9A30-C39A9873840D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695BD039-2B61-4405-940C-DEA734FB2E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695BD039-2B61-4405-940C-DEA734FB2E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695BD039-2B61-4405-940C-DEA734FB2E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695BD039-2B61-4405-940C-DEA734FB2E93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
