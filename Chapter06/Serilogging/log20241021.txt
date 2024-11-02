@@ -1,0 +1,10 @@
+2024-10-21 16:35:36.999 -05:00 [INF] The global logger has been configured.
+2024-10-21 16:35:37.037 -05:00 [WRN] Danger, Serilog, danter!
+2024-10-21 16:35:37.038 -05:00 [ERR] This is an error!
+2024-10-21 16:35:37.038 -05:00 [FTL] Fatal problem!
+2024-10-21 16:35:37.042 -05:00 [INF] Serilogging.Models.ProductPageView occured at 10/21/2024 9:35:37 PM +00:00
+2024-10-21 16:37:31.191 -05:00 [INF] The global logger has been configured.
+2024-10-21 16:37:31.225 -05:00 [WRN] Danger, Serilog, danter!
+2024-10-21 16:37:31.226 -05:00 [ERR] This is an error!
+2024-10-21 16:37:31.226 -05:00 [FTL] Fatal problem!
+2024-10-21 16:37:31.227 -05:00 [INF] {"ProductId":1,"PageTitle":"Chai","SiteSection":"Beverages","$type":"ProductPageView"} occured at "2024-10-21T21:37:31.2272256+00:00"
