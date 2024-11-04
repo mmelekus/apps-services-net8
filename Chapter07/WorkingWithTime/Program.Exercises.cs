@@ -14,7 +14,7 @@ partial class Program
         WriteLine($"DateTime.Today:     {DateTime.Today}");
         WriteLine($"DateTime.Today:     {DateTime.Today:d}");
         WriteLine($"DateTime.Today:     {DateTime.Today:D}");
-        
+
         WriteLine();
     }
 
@@ -115,5 +115,20 @@ partial class Program
         WriteLine($"Is July 4th daylight saving time? {independenceDay.IsDaylightSavingTime()}");
 
         WriteLine();
+    }
+
+    private static void LocalizingDayOfWeekEnum(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Localizing the DayOfWeek enum: {culture}");
+        ConfigureConsole(culture: culture, overrideComputerCulture: overrideComputerCulture);
+
+        // DayOfWeek is not localized to Danish ("da-DK")
+        WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture.NativeName}, DayOfWeek: {DateTime.Now.DayOfWeek}");
+
+        // Use dddd format code to get day of week localized.
+        WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture.NativeName}, DayOfWeek: {DateTime.Now:dddd}");
+
+        // Use GetDayName method to get day of week localized.
+        WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture.NativeName}, DayOfWeek: {DateTimeFormatInfo.CurrentInfo.GetDayName(DateTime.Now.DayOfWeek)}");
     }
 }
