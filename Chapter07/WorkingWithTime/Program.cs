@@ -12,4 +12,8 @@
 
 // MicrosecondsAndNanoseconds();
 
-GlobalizationWithDatesAndTimes("en-GB");
+// GlobalizationWithDatesAndTimes("en-GB");
+
+ComplexitiesOfDST();
+ComplexitiesOfDST("en-GB");
+ComplexitiesOfDST("fr-CA");

@@ -14,6 +14,7 @@ partial class Program
         WriteLine($"DateTime.Today:     {DateTime.Today}");
         WriteLine($"DateTime.Today:     {DateTime.Today:d}");
         WriteLine($"DateTime.Today:     {DateTime.Today:D}");
+        
         WriteLine();
     }
 
@@ -31,6 +32,7 @@ partial class Program
         WriteLine($"Christmas is in month {xmas.Month} of the year.");
         WriteLine($"Christmas is day {xmas.DayOfYear} of {xmas.Year}.");
         WriteLine($"Christmas {xmas.Year} is on a {xmas.DayOfWeek}.");
+
         WriteLine();
     }
 
@@ -53,6 +55,8 @@ partial class Program
         DateTime kidsWakeUp = new(year: 2024, month: 12, day: 25, hour: 6, minute: 30, second: 0);
         WriteLine($"Kids wake up: {kidsWakeUp}");
         WriteLine($"The kids woke me up at {kidsWakeUp.ToShortTimeString()}");
+
+        WriteLine();
     }
 
     private static void MicrosecondsAndNanoseconds(string culture = "en-US", bool overrideComputerCulture = true)
@@ -66,6 +70,8 @@ partial class Program
         preciseTime = DateTime.UtcNow;
         // Nanosecond value will be 0 to 900 in 100 nanosecond increments.
         WriteLine($"Millisecond: {preciseTime.Millisecond}, Microsecond: {preciseTime.Microsecond}, Nanoseconds: {preciseTime.Nanosecond}");
+
+        WriteLine();
     }
 
     private static void GlobalizationWithDatesAndTimes(string culture = "en-US", bool overrideComputerCulture = true)
@@ -87,5 +93,27 @@ partial class Program
         culture = "en-US";
         independenceDay = DateTime.Parse(textDate, provider: CultureInfo.GetCultureInfo(culture));
         WriteLine($"Text: {textDate}, DateTime: {independenceDay:d MMMM} -- Culture: {culture}");
+        
+        WriteLine();
+    }
+
+    private static void ComplexitiesOfDST(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Complexities of daylight saving time: {culture}");
+        ConfigureConsole(culture: culture, overrideComputerCulture: overrideComputerCulture);
+
+        for (int year = 2023; year <= 2028; year++)
+        {
+            Write($"{year} is a leap year: {DateTime.IsLeapYear(year)}.  ");
+            WriteLine($"There are {DateTime.DaysInMonth(year: year, month: 2)} days in February {year}.");
+        }
+
+        DateTime xmas = new(year: 2024, month: 12, day: 25);
+        string textDate = "July 4, 2024";
+        DateTime independenceDay = DateTime.Parse(textDate);
+        WriteLine($"Is Christmas daylight saving time? {xmas.IsDaylightSavingTime()}");
+        WriteLine($"Is July 4th daylight saving time? {independenceDay.IsDaylightSavingTime()}");
+
+        WriteLine();
     }
 }
