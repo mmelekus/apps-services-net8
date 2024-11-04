@@ -31,4 +31,25 @@ partial class Program
         WriteLine($"Christmas {xmas.Year} is on a {xmas.DayOfWeek}.");
         WriteLine();
     }
+
+    private static void DateAndTimeCalculations(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Date and time calculations: {culture}");
+        ConfigureConsole(culture: culture, overrideComputerCulture: overrideComputerCulture);
+
+        DateTime xmas = new(year: 2024, month: 12, day: 25);
+        DateTime beforeXmas = xmas.Subtract(TimeSpan.FromDays(12));
+        DateTime afterXmas = xmas.AddDays(12);
+        WriteLine($"12 days before Christmas: {beforeXmas:d}");
+        WriteLine($"12 days after Chrismas: {afterXmas:d}");
+        
+        TimeSpan untilXmas = xmas - DateTime.Now;
+        WriteLine($"Now: {DateTime.Now}");
+        WriteLine($"There are {untilXmas.Days} days and {untilXmas.Hours} hours until Christmas {xmas.Year}.");
+        WriteLine($"There are {untilXmas.TotalHours:N0} hours until Christmas {xmas.Year}.");
+
+        DateTime kidsWakeUp = new(year: 2024, month: 12, day: 25, hour: 6, minute: 30, second: 0);
+        WriteLine($"Kids wake up: {kidsWakeUp}");
+        WriteLine($"The kids woke me up at {kidsWakeUp.ToShortTimeString()}");
+    }
 }
