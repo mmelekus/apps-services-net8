@@ -18,4 +18,6 @@
 // ComplexitiesOfDST("en-GB");
 // ComplexitiesOfDST("fr-CA");
 
-LocalizingDayOfWeekEnum("da-DK");
+// LocalizingDayOfWeekEnum("da-DK");
+
+WorkingWithOnlyDateOrTime();

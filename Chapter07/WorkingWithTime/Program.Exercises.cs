@@ -130,5 +130,23 @@ partial class Program
 
         // Use GetDayName method to get day of week localized.
         WriteLine($"Culture: {Thread.CurrentThread.CurrentCulture.NativeName}, DayOfWeek: {DateTimeFormatInfo.CurrentInfo.GetDayName(DateTime.Now.DayOfWeek)}");
+
+        WriteLine();
+    }
+
+    private static void WorkingWithOnlyDateOrTime(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Working with only a date or time: {culture}");
+
+        DateOnly party = new(year: 2024, month: 11, day: 12);
+        WriteLine($"The .NET 9 release party in on {party.ToLongDateString()}.");
+
+        TimeOnly starts = new(hour: 11, minute: 30);
+        WriteLine($"The party starts at {starts}.");
+
+        DateTime calendarEntry = party.ToDateTime(starts);
+        WriteLine($"Add to your calendar: {calendarEntry}.");
+
+        WriteLine();
     }
 }
