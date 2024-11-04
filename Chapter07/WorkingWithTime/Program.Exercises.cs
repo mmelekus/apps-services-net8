@@ -1,3 +1,5 @@
+using System.Globalization; // To use CultureInfo.
+
 partial class Program
 {
     private static void SpecifyingDateTimeValues(string culture = "en-US", bool overrideComputerCulture = true)
@@ -64,5 +66,26 @@ partial class Program
         preciseTime = DateTime.UtcNow;
         // Nanosecond value will be 0 to 900 in 100 nanosecond increments.
         WriteLine($"Millisecond: {preciseTime.Millisecond}, Microsecond: {preciseTime.Microsecond}, Nanoseconds: {preciseTime.Nanosecond}");
+    }
+
+    private static void GlobalizationWithDatesAndTimes(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Globalization with dates and times: {culture}");
+        ConfigureConsole(culture: culture, overrideComputerCulture: overrideComputerCulture);
+
+        // Same as Thread.CurrenThread.CurrentCulture.
+        WriteLine($"Current culture: {CultureInfo.CurrentCulture.Name} -- Culture: {culture}");
+
+        string textDate = "July 4, 2024";
+        DateTime independenceDay = DateTime.Parse(textDate);
+        WriteLine($"Text: {textDate}, DateTime: {independenceDay:d MMMM} -- Culture: {culture}");
+        textDate = "7/4/2024";
+        independenceDay = DateTime.Parse(textDate);
+        WriteLine($"Text: {textDate}, DateTime: {independenceDay:d MMMM} -- Culture: {culture}");
+
+        // Explicitly override the current culture by setting a provider.
+        culture = "en-US";
+        independenceDay = DateTime.Parse(textDate, provider: CultureInfo.GetCultureInfo(culture));
+        WriteLine($"Text: {textDate}, DateTime: {independenceDay:d MMMM} -- Culture: {culture}");
     }
 }

@@ -10,4 +10,6 @@
 // DateAndTimeCalculations(culture: "en-GB");
 // DateAndTimeCalculations(culture: "fr-CA");
 
-MicrosecondsAndNanoseconds();
+// MicrosecondsAndNanoseconds();
+
+GlobalizationWithDatesAndTimes("en-GB");
