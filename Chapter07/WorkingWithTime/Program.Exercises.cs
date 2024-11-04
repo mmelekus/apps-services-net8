@@ -52,4 +52,17 @@ partial class Program
         WriteLine($"Kids wake up: {kidsWakeUp}");
         WriteLine($"The kids woke me up at {kidsWakeUp.ToShortTimeString()}");
     }
+
+    private static void MicrosecondsAndNanoseconds(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Milli-, micro-, and nanosecods: {culture}");
+        ConfigureConsole(culture: culture, overrideComputerCulture: overrideComputerCulture);
+
+        DateTime preciseTime = new(year: 2022, month: 11, day: 8, hour: 12, minute: 0, second: 0, millisecond: 6, microsecond: 999);
+        WriteLine($"Millisecond: {preciseTime.Millisecond}, Microsecond: {preciseTime.Microsecond}, Nanoseconds: {preciseTime.Nanosecond}");
+        
+        preciseTime = DateTime.UtcNow;
+        // Nanosecond value will be 0 to 900 in 100 nanosecond increments.
+        WriteLine($"Millisecond: {preciseTime.Millisecond}, Microsecond: {preciseTime.Microsecond}, Nanoseconds: {preciseTime.Nanosecond}");
+    }
 }
