@@ -20,4 +20,8 @@
 
 // LocalizingDayOfWeekEnum("da-DK");
 
-WorkingWithOnlyDateOrTime();
+// WorkingWithOnlyDateOrTime();
+
+WorkingWithDateTimeFormats();
+WorkingWithDateTimeFormats("en-GB");
+WorkingWithDateTimeFormats("fr-CA");

@@ -149,4 +149,33 @@ partial class Program
 
         WriteLine();
     }
+
+    private static void WorkingWithDateTimeFormats(string culture = "en-US", bool overrideComputerCulture = true)
+    {
+        SectionTitle($"Working with date/time formats: {culture}");
+        ConfigureConsole(culture, overrideComputerCulture);
+
+        DateTimeFormatInfo dtfi = DateTimeFormatInfo.CurrentInfo;
+        // Or use Thread.CurrentThread.CurrentCulture.DateTimeFormat.
+
+        WriteLine($"Date separator: {dtfi.DateSeparator}");
+        WriteLine($"Time separator: {dtfi.TimeSeparator}");
+        WriteLine($"Long date pattern: {dtfi.LongDatePattern}");
+        WriteLine($"Short date pattern: {dtfi.ShortDatePattern}");
+        WriteLine($"Long time pattern: {dtfi.LongTimePattern}");
+        WriteLine($"Short time pattern: {dtfi.ShortTimePattern}");
+        Write("Day Names:");
+        for (int i = 0; i < dtfi.DayNames.Length - 1; i++)
+        {
+            Write($"  {dtfi.GetDayName((DayOfWeek)i)}");
+        }
+        WriteLine();
+        Write("Month names:");
+        for (int i = 1; i < dtfi.MonthNames.Length; i++)
+        {
+            Write($"  {dtfi.GetMonthName(i)}");
+        }
+        WriteLine();
+        WriteLine();
+    }
 }
