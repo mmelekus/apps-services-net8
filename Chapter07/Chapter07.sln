@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingWithTimeProvider", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithTimeZones", "WorkingWithTimeZones\WorkingWithTimeZones.csproj", "{146AA182-3169-4EE1-B0F8-F386433B0474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithCultures", "WorkingWithCultures\WorkingWithCultures.csproj", "{67C43031-5F70-420E-9F40-F2BEDB4A38FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{146AA182-3169-4EE1-B0F8-F386433B0474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{146AA182-3169-4EE1-B0F8-F386433B0474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{146AA182-3169-4EE1-B0F8-F386433B0474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C43031-5F70-420E-9F40-F2BEDB4A38FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C43031-5F70-420E-9F40-F2BEDB4A38FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C43031-5F70-420E-9F40-F2BEDB4A38FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C43031-5F70-420E-9F40-F2BEDB4A38FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
