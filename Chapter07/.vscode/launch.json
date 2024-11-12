@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "C#: WorkingWithTime",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\WorkingWithTime\\WorkingWithTime.csproj",
+            "launchConfigurationId": "TargetFramework=;WorkingWithTime"
+        }
+    ]
+}
