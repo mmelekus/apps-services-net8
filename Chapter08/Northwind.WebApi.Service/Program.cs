@@ -4,10 +4,11 @@ using Northwind.WebApi.Service; // To use MapGets and so on.
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about cnfiguring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNorthwindContext();
+builder.Services.AddCustomHttpLogging();
 
 WebApplication app = builder.Build();
 
@@ -18,9 +19,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseHttpLogging();
 
 app.MapGets() // Default pageSize: 10.
    .MapPosts()
    .MapPuts()
    .MapDeletes();
+
 app.Run();
