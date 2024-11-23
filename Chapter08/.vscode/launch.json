@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: Northwind.WebApi.Service [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Service\\Northwind.WebApi.Service.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        },
+        {
+            "name": "C#: Northwind.WebApi.Client.Mvc [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Client.Mvc\\Northwind.WebApi.Client.Mvc.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server/Client",
+            "configurations": ["C#: Northwind.WebApi.Service [https]", "C#: Northwind.WebApi.Client.Mvc [https]"]
+        }
+    ]
+}
