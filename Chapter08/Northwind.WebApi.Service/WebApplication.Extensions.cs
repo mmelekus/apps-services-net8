@@ -48,7 +48,8 @@ public static class WebApplicationExtensions
                 db.Products.Where(p => p.ProductName.Contains(name)))
            .WithName("GetProductsByName")
            .WithOpenApi()
-           .Produces<Product[]>(StatusCodes.Status200OK);
+           .Produces<Product[]>(StatusCodes.Status200OK)
+           .RequireCors(policyName: "Northwind.Mvc.Policy"); // Enable a specific CORS policy for just this call.
         
         return app;
     }
@@ -105,5 +106,13 @@ public static class WebApplicationExtensions
           .Produces(StatusCodes.Status204NoContent);
         
         return app;
+    }
+
+    public static IServiceCollection AddCustomCors(this IServiceCollection services)
+    {
+        services.AddCors(options => {
+            options.AddPolicy(name: "Northwind.Mvc.Policy", policy => policy.WithOrigins("https://localhost:5082"));
+        });
+        return services;
     }
 }

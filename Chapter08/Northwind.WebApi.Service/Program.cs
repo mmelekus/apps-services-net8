@@ -5,12 +5,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddCustomCors();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNorthwindContext();
 builder.Services.AddCustomHttpLogging();
 
 WebApplication app = builder.Build();
+
+// Configure CORS
+// app.UseCors(policyName: "Northwind.Mvc.Policy");
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
