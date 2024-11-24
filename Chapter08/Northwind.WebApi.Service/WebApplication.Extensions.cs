@@ -1,8 +1,9 @@
+using System.Security.Claims;
+using AspNetCoreRateLimit; // To use IClientPolicyStore and so on.
 using Microsoft.AspNetCore.Http.HttpResults; // To use Results.
 using Microsoft.AspNetCore.Mvc; // To use [FromServices] and so on.
-using Northwind.Common.EntityModels.SqlServer; // To use Product.
-using Northwind.Common.DataContext.SqlServer;
-using Northwind.Common.EntityModels.SqlServer.Models; // To use NorthwindContext
+using Northwind.Common.DataContext.SqlServer; // To use NorthwindContext
+using Northwind.Common.EntityModels.SqlServer.Models; // To use Product
 
 namespace Northwind.WebApi.Service;
 
@@ -13,6 +14,9 @@ public static class WebApplicationExtensions
         app.MapGet("/", () => "Hello World!")
            .ExcludeFromDescription();
         
+        app.MapGet("/secret", (ClaimsPrincipal user) => $"Welcome, {user.Identity?.Name ?? "secure user"}")
+            .RequireAuthorization();
+            
         app.MapGet("api/products", ([FromServices] NorthwindDb db, [FromQuery] int? page) =>
             db.Products
               .Where(p => p.UnitsInStock > 0 && !p.Discontinued)
@@ -48,7 +52,8 @@ public static class WebApplicationExtensions
                 db.Products.Where(p => p.ProductName.Contains(name)))
            .WithName("GetProductsByName")
            .WithOpenApi()
-           .Produces<Product[]>(StatusCodes.Status200OK);
+           .Produces<Product[]>(StatusCodes.Status200OK)
+           .RequireCors(policyName: "Northwind.Mvc.Policy"); // Enable a specific CORS policy for just this call.
         
         return app;
     }
@@ -105,5 +110,24 @@ public static class WebApplicationExtensions
           .Produces(StatusCodes.Status204NoContent);
         
         return app;
+    }
+
+    public static IServiceCollection AddCustomCors(this IServiceCollection services)
+    {
+        services.AddCors(options => {
+            options.AddPolicy(name: "Northwind.Mvc.Policy", policy => policy.WithOrigins("https://localhost:5082"));
+        });
+        return services;
+    }
+
+    public static async Task UseCustomClientRateLimiting(this WebApplication app)
+    {
+        using (IServiceScope scope = app.Services.CreateScope())
+        {
+            IClientPolicyStore clientPolicyStore = scope.ServiceProvider.GetRequiredService<IClientPolicyStore>();
+            await clientPolicyStore.SeedAsync();
+        }
+
+        app.UseClientRateLimiting();
     }
 }
