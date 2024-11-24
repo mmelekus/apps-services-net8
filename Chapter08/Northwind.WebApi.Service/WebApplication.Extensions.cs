@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using AspNetCoreRateLimit; // To use IClientPolicyStore and so on.
 using Microsoft.AspNetCore.Http.HttpResults; // To use Results.
 using Microsoft.AspNetCore.Mvc; // To use [FromServices] and so on.
@@ -13,6 +14,9 @@ public static class WebApplicationExtensions
         app.MapGet("/", () => "Hello World!")
            .ExcludeFromDescription();
         
+        app.MapGet("/secret", (ClaimsPrincipal user) => $"Welcome, {user.Identity?.Name ?? "secure user"}")
+            .RequireAuthorization();
+            
         app.MapGet("api/products", ([FromServices] NorthwindDb db, [FromQuery] int? page) =>
             db.Products
               .Where(p => p.UnitsInStock > 0 && !p.Discontinued)

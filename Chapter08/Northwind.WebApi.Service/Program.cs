@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(defaultScheme: "Bearer")
+    .AddJwtBearer();
 builder.Services.AddCustomRateLimiting(builder.Configuration);
 builder.Services.AddCustomCors();
 builder.Services.AddEndpointsApiExplorer();
@@ -14,9 +17,12 @@ builder.Services.AddCustomHttpLogging();
 
 WebApplication app = builder.Build();
 
+// Configure authorization
+app.UseAuthorization();
+
 // Configure CORS
-// app.UseCors(policyName: "Northwind.Mvc.Policy");
-app.UseCors();
+app.UseCors(policyName: "Northwind.Mvc.Policy");
+// app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -25,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseHttpLogging();
 await app.UseCustomClientRateLimiting();
 
