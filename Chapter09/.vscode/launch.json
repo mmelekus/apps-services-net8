@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "C#: Northwind.WebApi.Service [Default Configuration]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Service\\Northwind.WebApi.Service.csproj"
+        },
+        {
+            "name": "C#: Northwind.WebApi.Service [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Service\\Northwind.WebApi.Service.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        }
+    ]
+}

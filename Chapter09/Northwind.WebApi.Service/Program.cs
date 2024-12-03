@@ -1,8 +1,20 @@
+using Microsoft.Extensions.Caching.Memory;  // To use IMemoryCache and so on.
 using Northwind.Common.DataContext.SqlServer;  // To use the AddNorthwindContext extenion method.
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddStackExchangeRedisCache(options => {
+    options.Configuration = builder.Configuration.GetConnectionString("NorthwindRedis");
+    options.InstanceName = "NorthwindRedis";
+});
+builder.Services.AddSingleton<IMemoryCache>(new MemoryCache(
+    new MemoryCacheOptions
+    {
+        TrackStatistics = true,
+        SizeLimit = 50 // Products
+    }
+));
 builder.Services.AddNorthwindContext(builder.Configuration.GetConnectionString(GlobalConstants.NorthwindConnection));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

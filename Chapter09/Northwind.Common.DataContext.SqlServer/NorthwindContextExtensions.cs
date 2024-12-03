@@ -16,7 +16,7 @@ public static class NorthwindContextExtensions
     {
         SqlConnectionStringBuilder builder;
 
-        if (connectionString == null)
+        if (string.IsNullOrWhiteSpace(connectionString))
         {
             builder = new();
             // builder.DataSource = ".";
