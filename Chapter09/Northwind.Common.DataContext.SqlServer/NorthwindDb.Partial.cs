@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore; // DbContext
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging; // DbContext
 
 namespace Northwind.Common.DataContext.SqlServer;
 

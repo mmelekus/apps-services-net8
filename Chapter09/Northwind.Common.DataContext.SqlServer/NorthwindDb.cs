@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Northwind.Common.EntityModels.SqlServer.Models;
 
 namespace Northwind.Common.DataContext.SqlServer;
