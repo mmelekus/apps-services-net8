@@ -100,7 +100,14 @@ public class ProductsController : ControllerBase
     // GET: api/products/cha
     [HttpGet("{name}")]
     [Produces(typeof(Product[]))]
-    public IEnumerable<Product> Get(string name) => _db.Products.Where(p => p.ProductName.Contains(name));
+    public IEnumerable<Product> Get(string name)
+    {
+        // Works correctly 1 out of 3 times.
+        if (Random.Shared.Next(1, 4) == 1) { return _db.Products.Where(p => p.ProductName.Contains(name)); }
+
+        // Throws an exception at all other times.
+        throw new Exception("Randomized fault.");
+    }
 
     // POST: api/products
     [HttpPost]
