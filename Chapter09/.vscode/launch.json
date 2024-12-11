@@ -10,7 +10,8 @@
             "name": "C#: Northwind.WebApi.Client.Mvc [Https]",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Client.Mvc\\Northwind.WebApi.Client.Mvc.csproj"
+            "projectPath": "${workspaceFolder}\\Northwind.WebApi.Client.Mvc\\Northwind.WebApi.Client.Mvc.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
         },
         {
             "name": "C#: Northwind.WebApi.Service [Default Configuration]",
