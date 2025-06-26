@@ -5,12 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: SignalR Service [https]",
+            "name": "C# Northwind.SignalR.Service.Client.Mvc [https]",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Northwind.SignalR.Service.Client.Mvc/Northwind.SignalR.Service.Client.Mvc.csproj",
+            "projectPath": "${workspaceFolder}\\Northwind.SignalR.Service.Client.Mvc\\Northwind.SignalR.Service.Client.Mvc.csproj",
             "launchConfigurationId": "TargetFramework=;https"
         }
-
     ]
 }

@@ -1,4 +1,4 @@
-using Northwind.SignalR.Service.Client.Mvc.Hubs; // To use ChatHub.
+using Northwind.SignalR.Service.Client.Mvc;  // To use ChatHub.
 
 var builder = WebApplication.CreateBuilder(args);
 
