@@ -10,6 +10,13 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}\\Northwind.SignalR.Service.Client.Mvc\\Northwind.SignalR.Service.Client.Mvc.csproj",
             "launchConfigurationId": "TargetFramework=;https"
+        },
+        {
+            "name": "C# Northwind.SignalR.Client.Console",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.SignalR.Client.Console\\Northwind.SignalR.Client.Console.csproj",
+            "launchConfigurationId": "TargetFramework=;"
         }
     ]
 }
