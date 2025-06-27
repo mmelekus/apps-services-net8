@@ -28,6 +28,12 @@ Repository to store exercie files and labs for the book [Apps and Services with 
     - Database: Northwind
     - Container: Products
     - Partition Key: /productId
+  - GraphQL Tools
+    - ChilliCream
+      - **Hot Chocolate** Enables you to create GraphQL services for .NET ([GitHub repository for **Hot Chocolate**](https://github.com/ChilliCream/hotchocolate))
+      - **Strawberry Shake** Enables you to create GraphQL clients for .NET
+      - **Banana Cake Pop** Enables you to run queries and explore a GraphQL endpoint using a Monaco-based GraphQL IDE
+      - **Green Donut** Enables better performance when loading data
 - IDE's:
   - Visual Studio 2022
   - Visual Studio Code 1.88
