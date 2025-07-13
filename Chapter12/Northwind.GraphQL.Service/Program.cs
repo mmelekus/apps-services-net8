@@ -8,10 +8,15 @@ builder.Services
     .AddGraphQLServer()
     .AddFiltering()
     .AddSorting()
+    .AddSubscriptionType<Subscription>()
+    .AddInMemorySubscriptions()
     .RegisterDbContextFactory<NorthwindDb>()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .AddMutationType<Mutation>();
 
 var app = builder.Build();
+
+app.UseWebSockets();
 
 app.MapGet("/", () => "Navigate to: https://localhost:5121/graphql");
 

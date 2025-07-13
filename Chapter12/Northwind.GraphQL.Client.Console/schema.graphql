@@ -1,0 +1,572 @@
+schema {
+  query: Query
+}
+
+input ProductSortInput {
+  productId: SortEnumType
+  productName: SortEnumType
+  supplierId: SortEnumType
+  categoryId: SortEnumType
+  quantityPerUnit: SortEnumType
+  unitPrice: SortEnumType
+  unitsInStock: SortEnumType
+  unitsOnOrder: SortEnumType
+  reorderLevel: SortEnumType
+  discontinued: SortEnumType
+  category: CategorySortInput
+  supplier: SupplierSortInput
+}
+
+type Category {
+  categoryId: Int!
+  categoryName: String!
+  description: String
+  picture: [Byte!]
+  products: [Product!]!
+}
+
+"A connection to a list of items."
+type ProductsWithPagingConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [ProductsWithPagingEdge!]
+  "A flattened list of the nodes."
+  nodes: [Product!]
+}
+
+input ListFilterInputTypeOfEmployeeFilterInput {
+  all: EmployeeFilterInput
+  none: EmployeeFilterInput
+  some: EmployeeFilterInput
+  any: Boolean
+}
+
+input OrderDetailFilterInput {
+  and: [OrderDetailFilterInput!]
+  or: [OrderDetailFilterInput!]
+  orderId: IntOperationFilterInput
+  productId: IntOperationFilterInput
+  unitPrice: DecimalOperationFilterInput
+  quantity: ShortOperationFilterInput
+  discount: FloatOperationFilterInput
+  order: OrderFilterInput
+  product: ProductFilterInput
+}
+
+type Order {
+  orderId: Int!
+  customerId: String
+  employeeId: Int
+  orderDate: DateTime
+  requiredDate: DateTime
+  shippedDate: DateTime
+  shipVia: Int
+  freight: Decimal
+  shipName: String
+  shipAddress: String
+  shipCity: String
+  shipRegion: String
+  shipPostalCode: String
+  shipCountry: String
+  customer: Customer
+  employee: Employee
+  orderDetails: [OrderDetail!]!
+  shipViaNavigation: Shipper
+}
+
+input IntOperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int]
+  nin: [Int]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input CategorySortInput {
+  categoryId: SortEnumType
+  categoryName: SortEnumType
+  description: SortEnumType
+}
+
+input FloatOperationFilterInput {
+  eq: Float
+  neq: Float
+  in: [Float]
+  nin: [Float]
+  gt: Float
+  ngt: Float
+  gte: Float
+  ngte: Float
+  lt: Float
+  nlt: Float
+  lte: Float
+  nlte: Float
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+type Employee {
+  employeeId: Int!
+  lastName: String!
+  firstName: String!
+  title: String
+  titleOfCourtesy: String
+  birthDate: DateTime
+  hireDate: DateTime
+  address: String
+  city: String
+  region: String
+  postalCode: String
+  country: String
+  homePhone: String
+  extension: String
+  photo: [Byte!]
+  notes: String
+  reportsTo: Int
+  photoPath: String
+  inverseReportsToNavigation: [Employee!]!
+  orders: [Order!]!
+  reportsToNavigation: Employee
+  territories: [Territory!]!
+  lastRefreshed: DateTime!
+}
+
+type Customer {
+  customerId: String!
+  companyName: String!
+  contactName: String
+  contactTitle: String
+  address: String
+  city: String
+  region: String
+  postalCode: String
+  country: String
+  phone: String
+  fax: String
+  orders: [Order!]!
+  customerTypes: [CustomerDemographic!]!
+}
+
+input TerritoryFilterInput {
+  and: [TerritoryFilterInput!]
+  or: [TerritoryFilterInput!]
+  territoryId: StringOperationFilterInput
+  territoryDescription: StringOperationFilterInput
+  regionId: IntOperationFilterInput
+  region: RegionFilterInput
+  employees: ListFilterInputTypeOfEmployeeFilterInput
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+input ListFilterInputTypeOfTerritoryFilterInput {
+  all: TerritoryFilterInput
+  none: TerritoryFilterInput
+  some: TerritoryFilterInput
+  any: Boolean
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+  "Indicates whether more edges exist following the set defined by the clients arguments."
+  hasNextPage: Boolean!
+  "Indicates whether more edges exist prior the set defined by the clients arguments."
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+}
+
+input ListFilterInputTypeOfOrderDetailFilterInput {
+  all: OrderDetailFilterInput
+  none: OrderDetailFilterInput
+  some: OrderDetailFilterInput
+  any: Boolean
+}
+
+input CustomerFilterInput {
+  and: [CustomerFilterInput!]
+  or: [CustomerFilterInput!]
+  customerId: StringOperationFilterInput
+  companyName: StringOperationFilterInput
+  contactName: StringOperationFilterInput
+  contactTitle: StringOperationFilterInput
+  address: StringOperationFilterInput
+  city: StringOperationFilterInput
+  region: StringOperationFilterInput
+  postalCode: StringOperationFilterInput
+  country: StringOperationFilterInput
+  phone: StringOperationFilterInput
+  fax: StringOperationFilterInput
+  orders: ListFilterInputTypeOfOrderFilterInput
+  customerTypes: ListFilterInputTypeOfCustomerDemographicFilterInput
+}
+
+type Region {
+  regionId: Int!
+  regionDescription: String!
+  territories: [Territory!]!
+}
+
+input ListFilterInputTypeOfCustomerFilterInput {
+  all: CustomerFilterInput
+  none: CustomerFilterInput
+  some: CustomerFilterInput
+  any: Boolean
+}
+
+input SupplierFilterInput {
+  and: [SupplierFilterInput!]
+  or: [SupplierFilterInput!]
+  supplierId: IntOperationFilterInput
+  companyName: StringOperationFilterInput
+  contactName: StringOperationFilterInput
+  contactTitle: StringOperationFilterInput
+  address: StringOperationFilterInput
+  city: StringOperationFilterInput
+  region: StringOperationFilterInput
+  postalCode: StringOperationFilterInput
+  country: StringOperationFilterInput
+  phone: StringOperationFilterInput
+  fax: StringOperationFilterInput
+  homePage: StringOperationFilterInput
+  products: ListFilterInputTypeOfProductFilterInput
+}
+
+input ListFilterInputTypeOfProductFilterInput {
+  all: ProductFilterInput
+  none: ProductFilterInput
+  some: ProductFilterInput
+  any: Boolean
+}
+
+input OrderFilterInput {
+  and: [OrderFilterInput!]
+  or: [OrderFilterInput!]
+  orderId: IntOperationFilterInput
+  customerId: StringOperationFilterInput
+  employeeId: IntOperationFilterInput
+  orderDate: DateTimeOperationFilterInput
+  requiredDate: DateTimeOperationFilterInput
+  shippedDate: DateTimeOperationFilterInput
+  shipVia: IntOperationFilterInput
+  freight: DecimalOperationFilterInput
+  shipName: StringOperationFilterInput
+  shipAddress: StringOperationFilterInput
+  shipCity: StringOperationFilterInput
+  shipRegion: StringOperationFilterInput
+  shipPostalCode: StringOperationFilterInput
+  shipCountry: StringOperationFilterInput
+  customer: CustomerFilterInput
+  employee: EmployeeFilterInput
+  orderDetails: ListFilterInputTypeOfOrderDetailFilterInput
+  shipViaNavigation: ShipperFilterInput
+}
+
+input RegionFilterInput {
+  and: [RegionFilterInput!]
+  or: [RegionFilterInput!]
+  regionId: IntOperationFilterInput
+  regionDescription: StringOperationFilterInput
+  territories: ListFilterInputTypeOfTerritoryFilterInput
+}
+
+input DateTimeOperationFilterInput {
+  eq: DateTime
+  neq: DateTime
+  in: [DateTime]
+  nin: [DateTime]
+  gt: DateTime
+  ngt: DateTime
+  gte: DateTime
+  ngte: DateTime
+  lt: DateTime
+  nlt: DateTime
+  lte: DateTime
+  nlte: DateTime
+}
+
+type Territory {
+  territoryId: String!
+  territoryDescription: String!
+  regionId: Int!
+  region: Region!
+  employees: [Employee!]!
+}
+
+input ProductFilterInput {
+  and: [ProductFilterInput!]
+  or: [ProductFilterInput!]
+  productId: IntOperationFilterInput
+  productName: StringOperationFilterInput
+  supplierId: IntOperationFilterInput
+  categoryId: IntOperationFilterInput
+  quantityPerUnit: StringOperationFilterInput
+  unitPrice: DecimalOperationFilterInput
+  unitsInStock: ShortOperationFilterInput
+  unitsOnOrder: ShortOperationFilterInput
+  reorderLevel: ShortOperationFilterInput
+  discontinued: BooleanOperationFilterInput
+  category: CategoryFilterInput
+  orderDetails: ListFilterInputTypeOfOrderDetailFilterInput
+  supplier: SupplierFilterInput
+}
+
+input SupplierSortInput {
+  supplierId: SortEnumType
+  companyName: SortEnumType
+  contactName: SortEnumType
+  contactTitle: SortEnumType
+  address: SortEnumType
+  city: SortEnumType
+  region: SortEnumType
+  postalCode: SortEnumType
+  country: SortEnumType
+  phone: SortEnumType
+  fax: SortEnumType
+  homePage: SortEnumType
+}
+
+"An edge in a connection."
+type ProductsWithPagingEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Product!
+}
+
+input ShortOperationFilterInput {
+  eq: Short
+  neq: Short
+  in: [Short]
+  nin: [Short]
+  gt: Short
+  ngt: Short
+  gte: Short
+  ngte: Short
+  lt: Short
+  nlt: Short
+  lte: Short
+  nlte: Short
+}
+
+input BooleanOperationFilterInput {
+  eq: Boolean
+  neq: Boolean
+}
+
+input DecimalOperationFilterInput {
+  eq: Decimal
+  neq: Decimal
+  in: [Decimal]
+  nin: [Decimal]
+  gt: Decimal
+  ngt: Decimal
+  gte: Decimal
+  ngte: Decimal
+  lt: Decimal
+  nlt: Decimal
+  lte: Decimal
+  nlte: Decimal
+}
+
+input EmployeeFilterInput {
+  and: [EmployeeFilterInput!]
+  or: [EmployeeFilterInput!]
+  employeeId: IntOperationFilterInput
+  lastName: StringOperationFilterInput
+  firstName: StringOperationFilterInput
+  title: StringOperationFilterInput
+  titleOfCourtesy: StringOperationFilterInput
+  birthDate: DateTimeOperationFilterInput
+  hireDate: DateTimeOperationFilterInput
+  address: StringOperationFilterInput
+  city: StringOperationFilterInput
+  region: StringOperationFilterInput
+  postalCode: StringOperationFilterInput
+  country: StringOperationFilterInput
+  homePhone: StringOperationFilterInput
+  extension: StringOperationFilterInput
+  photo: ListByteOperationFilterInput
+  notes: StringOperationFilterInput
+  reportsTo: IntOperationFilterInput
+  photoPath: StringOperationFilterInput
+  inverseReportsToNavigation: ListFilterInputTypeOfEmployeeFilterInput
+  orders: ListFilterInputTypeOfOrderFilterInput
+  reportsToNavigation: EmployeeFilterInput
+  territories: ListFilterInputTypeOfTerritoryFilterInput
+  lastRefreshed: DateTimeOperationFilterInput
+}
+
+input CustomerDemographicFilterInput {
+  and: [CustomerDemographicFilterInput!]
+  or: [CustomerDemographicFilterInput!]
+  customerTypeId: StringOperationFilterInput
+  customerDesc: StringOperationFilterInput
+  customers: ListFilterInputTypeOfCustomerFilterInput
+}
+
+type OrderDetail {
+  orderId: Int!
+  productId: Int!
+  unitPrice: Decimal!
+  quantity: Short!
+  discount: Float!
+  order: Order!
+  product: Product!
+}
+
+type Supplier {
+  supplierId: Int!
+  companyName: String!
+  contactName: String
+  contactTitle: String
+  address: String
+  city: String
+  region: String
+  postalCode: String
+  country: String
+  phone: String
+  fax: String
+  homePage: String
+  products: [Product!]!
+}
+
+input ListByteOperationFilterInput {
+  all: ByteOperationFilterInput
+  none: ByteOperationFilterInput
+  some: ByteOperationFilterInput
+  any: Boolean
+}
+
+type Shipper {
+  shipperId: Int!
+  companyName: String!
+  phone: String
+  orders: [Order!]!
+}
+
+"The `Short` scalar type represents non-fractional signed whole 16-bit numeric values. Short can represent values between -(2^15) and 2^15 - 1."
+scalar Short
+
+type Query {
+  greeting: String!
+  farewell: String!
+  rollTheDie: Int!
+  categories: [Category!]!
+  category(categoryId: Int!): Category
+  products(where: ProductFilterInput order: [ProductSortInput!]): [Product!]!
+  productsInCategory(categoryId: Int!): [Product!]!
+  productsByUnitPrice(minimumUnitPrice: Decimal!): [Product!]!
+  productsWithPaging("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String): ProductsWithPagingConnection
+}
+
+input ListFilterInputTypeOfOrderFilterInput {
+  all: OrderFilterInput
+  none: OrderFilterInput
+  some: OrderFilterInput
+  any: Boolean
+}
+
+input CategoryFilterInput {
+  and: [CategoryFilterInput!]
+  or: [CategoryFilterInput!]
+  categoryId: IntOperationFilterInput
+  categoryName: StringOperationFilterInput
+  description: StringOperationFilterInput
+  picture: ListByteOperationFilterInput
+  products: ListFilterInputTypeOfProductFilterInput
+}
+
+type CustomerDemographic {
+  customerTypeId: String!
+  customerDesc: String
+  customers: [Customer!]!
+}
+
+"The `Decimal` scalar type represents a decimal floating-point number."
+scalar Decimal
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime
+
+input ListFilterInputTypeOfCustomerDemographicFilterInput {
+  all: CustomerDemographicFilterInput
+  none: CustomerDemographicFilterInput
+  some: CustomerDemographicFilterInput
+  any: Boolean
+}
+
+input ByteOperationFilterInput {
+  eq: Byte
+  neq: Byte
+  in: [Byte]
+  nin: [Byte]
+  gt: Byte
+  ngt: Byte
+  gte: Byte
+  ngte: Byte
+  lt: Byte
+  nlt: Byte
+  lte: Byte
+  nlte: Byte
+}
+
+"The `Byte` scalar type represents non-fractional whole numeric values. Byte can represent values between 0 and 255."
+scalar Byte
+
+type Product {
+  productId: Int!
+  productName: String!
+  supplierId: Int
+  categoryId: Int
+  quantityPerUnit: String
+  unitPrice: Decimal
+  unitsInStock: Short
+  unitsOnOrder: Short
+  reorderLevel: Short
+  discontinued: Boolean!
+  category: Category
+  orderDetails: [OrderDetail!]!
+  supplier: Supplier
+}
+
+input ShipperFilterInput {
+  and: [ShipperFilterInput!]
+  or: [ShipperFilterInput!]
+  shipperId: IntOperationFilterInput
+  companyName: StringOperationFilterInput
+  phone: StringOperationFilterInput
+  orders: ListFilterInputTypeOfOrderFilterInput
+}
+
+"The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."
+directive @cost("The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc." weight: String!) on SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM | INPUT_FIELD_DEFINITION
+
+"The purpose of the `@listSize` directive is to either inform the static analysis about the size of returned lists (if that information is statically available), or to point the analysis to where to find that information."
+directive @listSize("The `assumedSize` argument can be used to statically define the maximum length of a list returned by a field." assumedSize: Int "The `slicingArguments` argument can be used to define which of the field's arguments with numeric type are slicing arguments, so that their value determines the size of the list returned by that field. It may specify a list of multiple slicing arguments." slicingArguments: [String!] "The `slicingArgumentDefaultValue` argument can be used to define a default value for a slicing argument, which is used if the argument is not present in a query." slicingArgumentDefaultValue: Int "The `sizedFields` argument can be used to define that the value of the `assumedSize` argument or of a slicing argument does not affect the size of a list returned by a field itself, but that of a list returned by one of its sub-fields." sizedFields: [String!] "The `requireOneSlicingArgument` argument can be used to inform the static analysis that it should expect that exactly one of the defined slicing arguments is present in a query. If that is not the case (i.e., if none or multiple slicing arguments are present), the static analysis may throw an error." requireOneSlicingArgument: Boolean! = true) on FIELD_DEFINITION
