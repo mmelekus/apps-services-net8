@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: Northwind.GraphQL.Service [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.GraphQL.Service\\Northwind.GraphQL.Service.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        },
+        {
+            "name": "C#: Northwind.GraphQL.Client.Mvc [https]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\Northwind.GraphQL.Client.Mvc\\Northwind.GraphQL.Client.Mvc.csproj",
+            "launchConfigurationId": "TargetFramework=;https"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "GraphQL Server/Client",
+            "configurations": ["C#: Northwind.GraphQL.Service [https]", "C#: Northwind.GraphQL.Client.Mvc [https]"],
+            "stopAll": true
+        }
+    ]
+}
