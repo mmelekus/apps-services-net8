@@ -17,4 +17,4 @@ app.MapGet("/", () => "Navigate to: https://localhost:5121/graphql");
 
 app.MapGraphQL();
 
-app.Run();
+await app.RunAsync();

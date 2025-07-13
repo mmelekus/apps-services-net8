@@ -34,6 +34,7 @@ Repository to store exercie files and labs for the book [Apps and Services with 
       - **Strawberry Shake** Enables you to create GraphQL clients for .NET
       - **Banana Cake Pop** Enables you to run queries and explore a GraphQL endpoint using a Monaco-based GraphQL IDE
       - **Green Donut** Enables better performance when loading data
+  - SonarQube Cloud Projects: [SonarQube Cloud - Projects](https://sonarcloud.io/projects)
 - IDE's:
   - Visual Studio 2022
   - Visual Studio Code 1.88
